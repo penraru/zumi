@@ -95,6 +95,9 @@
 #define M1  1
 #define M2  2
 
+bool getTurnBias();
+void setTurnBias();
+
 void initialize();
 int ModeSelect();
 

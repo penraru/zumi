@@ -4,8 +4,14 @@
 
 import serial
 
-ser = serial.Serial('/dev/ttyUSB0',115200)
-
+ser = serial.Serial(
+    port = '/dev/ttyUSB0',
+    baudrate = 115200,
+    parity = serial.PARITY_NONE,
+    stopbits = serial.STOPBITS_ONE,
+    bytesize = serial.EIGHTBITS,
+    timeout = 0.5
+    )
 
 def readSensors():
     #FrontLeft,FrontMiddle,FrontRight
@@ -22,14 +28,15 @@ def requestData():
     #ON linky only speed is currently requested
 
     ser.write("Z")#REQUEST INFO
+
     read_serial = ser.readline()
     #read the Serial line the rokit should be sending a message
 
     #chop up that message
     servo1Angle,servo2Angle,servoStep,speed,a19,a20,a21 = read_serial.split(" ")
     #now return the data as integers
-    return int(servo1Angle),int(servo2Angle),int(servoStep),int(speed),int(a19),int(a20),int(a21)    
 
+    return int(servo1Angle),int(servo2Angle),int(servoStep),int(speed),int(a19),int(a20),int(a21)    
 
 def forward():
     ser.write('M')
@@ -46,13 +53,11 @@ def right():
 def stop():
     ser.write('Q')
 
-
 def speedDecrease():
     ser.write('V')
 
 def speedIncrease():
     ser.write('W')
-
 
 def speed(speedPercentage):
     
@@ -70,8 +75,56 @@ def speed(speedPercentage):
         #print(currentSpeed)
         speedIncrease()
     
-    
+def setSpeed(i):
+    if i < 0:
+        i = 0
+    if i > 100:
+        i = 100
+    j = i%10
+    setModifier((i-j)/10)
+    ser.write('l')
+    setModifier(j)
+    ser.write('m')
 
+def setModifier(i):
+    if i == 0:
+        ser.write(b'a')
+    elif i == 1:
+        ser.write(b'b')
+    elif i == 2:
+        ser.write(b'c')
+    elif i == 3:
+        ser.write(b'd')
+    elif i == 4:
+        ser.write(b'e')
+    elif i == 5:
+        ser.write(b'f')
+    elif i == 6:
+        ser.write(b'g')
+    elif i == 7:
+        ser.write(b'h')
+    elif i == 8:
+        ser.write(b'i')
+    elif i == 9:
+        ser.write(b'j')
+    else:
+        ser.write(b'k')
 
+def flush():
+    ser.flushInput()
 
+def requestObstacle():
+    a = 0
+    if ser.inWaiting():
+        a = 1
+    return a
 
+def stumble():
+    ser.write('K')
+
+def setTurnBias(a):
+    if a == 0:
+        setModifier(0)
+    else:
+        setModifier(1)
+    ser.write('R')

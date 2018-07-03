@@ -1,10 +1,9 @@
 import os
 import sys
 
-#import RoPi_SerialCom as ropi
+import RoPi_SerialCom as ropi
 
 sys.path.append('/usr/local/lib/python2.7/site-packages')
-sys.path.append("/home/pi/RoPi/Linky_Python_Samples/RoPi_SerialCom.py")
 
 from picamera.array import PiRGBArray
 from picamera import PiCamera

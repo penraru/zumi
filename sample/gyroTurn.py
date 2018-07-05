@@ -63,16 +63,14 @@ gyroscope_zout = read_word_2c(0x47)
 gyroscope_zout_scaled = gyroscope_zout / 131
 
 
-print "I am getting ready to turn"
+        
+print "Getting ready to turn..."
 time.sleep(2)#Need sleep before turning for some weird reason?
 ropi.left()
-time.sleep(1)#Turn for one second
+time.sleep(.5)
+
+while angle < 90:      
+        angle = get_orientation(millis,angle,angleNew)
+      
 ropi.stop()
-print "I have turned"
-
-#while 1:
-    #angle = get_orientation(millis,angle,angleNew)
-    #print angle
-    
-
-
+print "stopped after " + str(angle) + " degrees"

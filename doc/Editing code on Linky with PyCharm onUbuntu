@@ -4,12 +4,21 @@
 sudo apt-get install sshfs
 sudo mkdir /mnt/linky
 sudo sshfs -o allow_other pi@192.168.1.151:/ /mnt/linky
+# pswd: pi
 
 # In PyCharm, File > Open 
 /mnt/linky/home/pi/Desktop/Linky
 
 # To run code:
 ssh pi@192.168.1.151
+# pswd: pi
 cd Desktop/Linky/sample/
 python gyroTurnSpoon.py 
+
+# To reconnect after a reboot
+sudo rm -Rf linky
+sudo mkdir /mnt/linky
+sudo sshfs -o allow_other pi@192.168.1.151:/ /mnt/linky
+# pswd: pi
+
 

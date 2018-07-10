@@ -12,12 +12,16 @@ power_mgmt_1 = 0x6b
 power_mgmt_2 = 0x6c
 
 # Initialize constants
-GYRO_SAMPLERATE = 100
+GYRO_SAMPLERATE = 80
 ERROR = 0
 DEGREES_TO_TURN = 90
+SCALE_RIGHT = 0.98
+SCALE_LEFT = 1.2
 
 bus = smbus.SMBus(1) # bus = smbus.SMBus(0) fuer Revision 1
 address = 0x68       # via i2cdetect
+
+bus.write_byte_data(address, power_mgmt_1, 0)
  
 def read_byte(reg):
 	return bus.read_byte_data(address, reg)
@@ -39,26 +43,31 @@ def get_orientation(angleOld):
     angleNew = 0.0
     gyroscope_zout = read_word_2c(0x47)
     gyroscope_zout_scaled = gyroscope_zout / 131
+    if(angleOld > 0):   #we are turning left
+        scale = SCALE_LEFT
+    else:               #we are turning right
+        scale = SCALE_RIGHT
     if abs(gyroscope_zout_scaled) > 5:
         angleNew = gyroscope_zout_scaled * GYRO_SAMPLERATE/1000 *0.98
-        scale = 1.2
         angleNew *= scale  #Scale factor to compensate for under/overshoot
         print "adding " + str(angleNew)
         angleNew += angleOld
     return angleNew
 
-
-bus.write_byte_data(address, power_mgmt_1, 0)
-
-
 def turnLeft():
-    millis = int(round(time.time() * 1000))
-    angle = 0.0
-
-    print "Getting ready to turn..."
     time.sleep(2)
     ropi.setMotor(-20, 20)
-    while angle < DEGREES_TO_TURN - ERROR:
+    stopWhenTurned(90)
+
+def turnRight():
+    time.sleep(2)
+    ropi.setMotor(20, -20)
+    stopWhenTurned(90)
+
+def stopWhenTurned(degrees):
+    millis = int(round(time.time() * 1000))
+    angle = 0.0
+    while abs(angle) < degrees - ERROR:
         if int(round(time.time() * 1000)) - millis >= GYRO_SAMPLERATE:
             angle = get_orientation(angle)
             millis = int(round(time.time() * 1000))  # reset the time
@@ -67,5 +76,8 @@ def turnLeft():
 
 
 turnLeft()
+turnRight()
+
+
 
 

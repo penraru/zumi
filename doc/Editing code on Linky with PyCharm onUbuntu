@@ -1,0 +1,15 @@
+# Download and install PyCharm
+
+# Set up an SSH mount point
+sudo apt-get install sshfs
+sudo mkdir /mnt/linky
+sudo sshfs -o allow_other pi@192.168.1.151:/ /mnt/linky
+
+# In PyCharm, File > Open 
+/mnt/linky/home/pi/Desktop/Linky
+
+# To run code:
+ssh pi@192.168.1.151
+cd Desktop/Linky/sample/
+python gyroTurnSpoon.py 
+

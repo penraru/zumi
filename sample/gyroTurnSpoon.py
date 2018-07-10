@@ -16,11 +16,6 @@ GYRO_SAMPLERATE = 100
 ERROR = 0
 DEGREES_TO_TURN = 90
 
-# Initialize variables
-millis = int(round(time.time()*1000))
-angle = 0.0
-angleNew = 0.0
-
 bus = smbus.SMBus(1) # bus = smbus.SMBus(0) fuer Revision 1
 address = 0x68       # via i2cdetect
  
@@ -41,6 +36,7 @@ def read_word_2c(reg):
 		return val
 	    
 def get_orientation(angleOld):
+    angleNew = 0.0
     gyroscope_zout = read_word_2c(0x47)
     gyroscope_zout_scaled = gyroscope_zout / 131
     if abs(gyroscope_zout_scaled) > 5:
@@ -48,21 +44,28 @@ def get_orientation(angleOld):
         scale = 1.2
         angleNew *= scale  #Scale factor to compensate for under/overshoot
         print "adding " + str(angleNew)
-        #if angleNew > 0:
-     	angleOld+=angleNew
-    return angleOld
+        angleNew += angleOld
+    return angleNew
 
 
 bus.write_byte_data(address, power_mgmt_1, 0)
 
-print "Getting ready to turn..."
-time.sleep(3)
-ropi.setMotor(-20,20)
 
-while angle < DEGREES_TO_TURN - ERROR:
-    if int(round(time.time()*1000))-millis >= GYRO_SAMPLERATE:
-        angle = get_orientation(angle)
-        millis = int(round(time.time()*1000)) #reset the time
+def turnLeft():
+    millis = int(round(time.time() * 1000))
+    angle = 0.0
 
-ropi.stop()
-print "stopped after " + str(angle) + " degrees"
+    print "Getting ready to turn..."
+    time.sleep(2)
+    ropi.setMotor(-20, 20)
+    while angle < DEGREES_TO_TURN - ERROR:
+        if int(round(time.time() * 1000)) - millis >= GYRO_SAMPLERATE:
+            angle = get_orientation(angle)
+            millis = int(round(time.time() * 1000))  # reset the time
+    ropi.stop()
+    print "stopped after " + str(angle) + " degrees"
+
+
+turnLeft()
+
+

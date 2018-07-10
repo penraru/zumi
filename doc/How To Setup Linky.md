@@ -1,4 +1,4 @@
-#How to set up your new Linky using SD card
+# How to set up your new Linky using SD card
 
 
 
@@ -32,7 +32,7 @@ You will see something like this, it’s okay if the numbers here do not match y
 64 bytes from 192.168.1.170: icmp_seq=1 ttl=64 time=18.792 ms
 …
 
-#CONNECTING TO LINKY USING SECURE SHELL
+## CONNECTING TO LINKY USING SECURE SHELL
 To connect to the Linky using SSH, enter the following into your terminal:
 
 >ssh pi@linky.local
@@ -40,7 +40,7 @@ To connect to the Linky using SSH, enter the following into your terminal:
 When prompted, the default password you will type in will be “pi”
 
 
-#CONNECTING TO LINKY USING VIRTUAL NETWORK COMPUTING
+## CONNECTING TO LINKY USING VIRTUAL NETWORK COMPUTING
 Open the VNC Viewer of your choice. To connect to the Linky using VNC, enter the following into the field for the VNC server address:
 
 >Linky.local

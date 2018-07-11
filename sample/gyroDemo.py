@@ -42,7 +42,7 @@ def get_orientation(millis,angle,angleNew):
         gyroscope_zout = read_word_2c(0x47)
         gyroscope_zout_scaled = gyroscope_zout / 131
         if abs(gyroscope_zout_scaled) > 5:
-            angleNew = gyroscope_zout_scaled * GYRO_SAMPLERATE/1000 *0.98
+            angleNew = gyroscope_zout_scaled * GYRO_SAMPLERATE/1000 *0.98  # equation from http://www.pieter-jan.com/node/11
             if angleNew > 0:
                 angleNew *= 90/80.0
             else:

@@ -21,8 +21,11 @@
 
 5. The next step is to boot the Pi and test, while the SD card is still in your computer. If you're going to try to connect via SSH, it may need to be enabled.
 You can connect to Linky by either using SSH (Secure Shell) or a VNC (Virtual Network Computing) Server.
-6. First, ensure that the Linky is connected to the same Wifi Network as you. To do this, you can enter the following into your terminal:
+6. If you have your hostname set to anything other than 'linky', then you should replace the word 'linky' with your custom hostname in these instructions. We will discuss how to change hostnames later in these instructions.
 
+First, ensure that the Linky is connected to the same Wifi Network as you. You can enter the following into your terminal:
+
+>FORMAT: ping [hostname].local
 >ping linky.local
 
 You will see something like this, it’s okay if the numbers here do not match yours:
@@ -43,6 +46,6 @@ When prompted, the default password you will type in will be “pi”
 ## CONNECTING TO LINKY USING VIRTUAL NETWORK COMPUTING
 Open the VNC Viewer of your choice. To connect to the Linky using VNC, enter the following into the field for the VNC server address:
 
->Linky.local
+>linky.local
 
 When prompted, the default password you will type in will be “default”. Give the display a few seconds to load.

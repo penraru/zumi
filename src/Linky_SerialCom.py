@@ -119,7 +119,7 @@ def requestObstacle():
         a = 1
     return a
 
-def stumble():
+def followLine():
     ser.write('K')
 
 def setTurnBias(a):

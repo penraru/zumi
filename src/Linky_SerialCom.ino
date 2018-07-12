@@ -26,9 +26,6 @@ int speedM1 = 0;
 int speedM2 = 0;
 bool turnBias = 0;
 
-int arrivemelody[] = {1702, 593, 1243};
-int arrivetempo[] = {12, 12, 8};
-
 void setup()
 {
   Serial.begin(115200);
@@ -66,18 +63,19 @@ void ropi(){
  }
  //readbyte will be an ASCII character or letter
   switch(readbyte)
-  { 
-    //------------------------------------------------------------------------  
+  {
+    //------------------------------------------------------------------------
     case 74: // letter "J", play sound and stop
       DCMove(stop,speed);
-      SoundProcess(arrivemelody, arrivetempo, 3);
+      //SoundProcess(arrivemelody, arrivetempo, 3);
+      Sound_Coin();
       break;
-      
-    //------------------------------------------------------------------------  
-    case 75: // letter "K", raw forward
-      DCMove(forward,30);
+
+    //------------------------------------------------------------------------
+    case 75: // letter "K"
+      LineTracer(speed);
       break;
-   //------------------------------------------------------------------------  
+   //------------------------------------------------------------------------
    case 76: //character "L"
    //Print all the data
    //top Left IR sensor
@@ -100,24 +98,24 @@ void ropi(){
   Serial.print(",");
   //Read the MIC
   Serial.println(ReadMic());
-  break; 
-  
-  //------------------------------------------------------------------------  
-  case 77:// character "M" 
-  LineTracer(30); //TODO:not dynamic
-  break;  
-  
+  break;
+
   //------------------------------------------------------------------------
-  case 78:// character "N" 
-  DCMove(backward,speed);        
-  break; 
+  case 77:// character "M"
+  DCMove(forward,speed);
+  break;
+
   //------------------------------------------------------------------------
-  case 79:// character "O" 
-  DCMove(left,speed); 
+  case 78:// character "N"
+  DCMove(backward,speed);
+  break;
+  //------------------------------------------------------------------------
+  case 79:// character "O"
+  DCMove(left,speed);
   break;
   //------------------------------------------------------------------------
   case 80://character "P"
-  DCMove(right,speed);     
+  DCMove(right,speed);
   break;
   //------------------------------------------------------------------------
   case 81: //character "Q"
@@ -139,7 +137,7 @@ void ropi(){
   break;
    //========================================================
    case 87: //character "W"
-   
+
    speed = speed + speedStepSize;//increase the speed
      if(speed>100)
   {
@@ -150,7 +148,7 @@ void ropi(){
 
 
   case 90: //character "Z"
-  //Currently placing dummy variables 
+  //Currently placing dummy variables
   //since RoPi library is expecting data
   Serial.print("0");
   Serial.print(" ");
@@ -165,10 +163,10 @@ void ropi(){
   Serial.print("0");
   Serial.print(" ");
   Serial.println("0");
-  
+
   //Serial.println(" ");
   break;
-  
+
   //========================================================
   case 97: //character "a"
 
@@ -261,7 +259,7 @@ void ropi(){
   break;
    //========================================================
   case 112: //character "p"
- 
+
   //Buzz(buzzMod, modifier);
   //SoundProcess(int _melody[], int _tempo[], int _size)
   //buzzMod = 100;
@@ -270,7 +268,7 @@ void ropi(){
   //int tempo[] = {1,2};
   //SoundProcess(melody, tempo, 1);
   Sound_Coin();
-  
+
   break;
    //========================================================
   case 113: //character "q"
@@ -323,10 +321,9 @@ void ropi(){
   break;
    //========================================================
 
-  
+
   default:
   break;
-  
+
   }
 }
-

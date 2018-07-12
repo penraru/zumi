@@ -1,7 +1,8 @@
 import os
 import sys
 
-import RoPi_SerialCom as ropi
+sys.path.insert(0,'/home/pi/Desktop/Linky/src')
+import Linky_SerialCom as ropi
 
 sys.path.append('/usr/local/lib/python2.7/site-packages')
 

@@ -1,7 +1,8 @@
 import os
 import sys
 
-import RoPi_SerialCom as ropi
+sys.path.insert(0,'/home/pi/Desktop/Linky/src')
+import Linky_SerialCom as ropi
 
 sys.path.append('/usr/local/lib/python2.7/site-packages')
 
@@ -41,13 +42,13 @@ def turnLeft():
     ropi.stop()
     ropi.stop()
     ropi.stop()
-    ropi.forward()
+    ropi.followLine()
     time.sleep(1.253)
     ropi.stop()
     ropi.left()
     time.sleep(0.25)
     ropi.stop()
-    ropi.stumble()
+    ropi.forward()
     time.sleep(0.8)
     ropi.stop()
 
@@ -56,13 +57,13 @@ def turnRight():
     ropi.stop()
     ropi.stop()
     ropi.stop()
-    ropi.forward()
+    ropi.followLine()
     time.sleep(1.4)
     ropi.stop()
     ropi.right()
     time.sleep(0.29)
     ropi.stop()
-    ropi.stumble()
+    ropi.forward()
     time.sleep(0.63)
     ropi.stop()
     print("finish right")
@@ -203,8 +204,7 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
 
     cnts = cv2.findContours(mask.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE) [-2]
     cntSort = []
-
-    #ropi.forward()
+    
 
     if len(cnts) > 0:
         for c in cnts:
@@ -230,7 +230,7 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
             elif instructions[interIter] == -1:
                 turnRight()
             elif instructions[interIter] == 0:
-                ropi.forward()
+                ropi.followLine()
                 time.sleep(1.0)
             elif instructions[interIter] == 1:
                 turnLeft()
@@ -242,7 +242,7 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
         else:
             routeComplete = True
             print("we made it!")
-            ropi.forward()
+            ropi.followLine()
             time.sleep(0.9)
             ropi.stop()
             ropi.stop()
@@ -259,7 +259,7 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
         obstruction = 0
 
     if not routeComplete:
-        ropi.forward()
+        ropi.followLine()
 
     #cv2.imshow("Result", mask)
 

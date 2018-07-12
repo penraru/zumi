@@ -26,7 +26,7 @@ You can connect to Linky by either using SSH (Secure Shell) or a VNC (Virtual Ne
 First, ensure that the Linky is connected to the same Wifi Network as you. You can enter the following into your terminal:
 
 >FORMAT: ping [hostname].local  
->ping linky.local
+>>ping linky.local
 
 You will see something like this, it’s okay if the numbers here do not match yours:
 
@@ -55,12 +55,8 @@ In your terminal, type in
 
 >sudo raspi-config
 
-And select option "2 Hostname" using the arrow keys on your keyboard. Use the enter key to select your desired option.
-
-You will be given some hostname guidelines on the following screen. After entering in the new hostname that complies with these guidelines, use the arrow down key to select the "Okay" option. Beware that there will be no warning if you enter a hostname that does not comply with guidelines.
-
-Use the side arrow keys to select the "Finish" option. When asked to reboot you can choose not to reboot. To check that your hostname has been changed, enter the following into the terminal:
+And select Option 2: Hostname using the arrow keys on your keyboard. Use the enter key to select your desired option. After entering the new hostname, hit the arrow down key to select the "Okay" option. Use the side arrow keys to select the Finish option. When asked to reboot you can choose to not reboot. To check that your hostname has changed, enter the following into the terminal:
 
  >hostname
 
- You have changed your hostname!
+ You have changed your hostname! 

@@ -128,3 +128,36 @@ def setTurnBias(a):
     else:
         setModifier(1)
     ser.write('R')
+
+def setMotor(i, j):
+    """Sets the individual speed of each motor.
+    Args: 2 integers, from -100 to 100, for the left and right motors, respectively.
+    """
+    reverse1 = 0
+    reverse2 = 0
+    if i < -100:
+        i = -100
+    if i < 0:
+        i *= -1
+        reverse1 = 1
+    if i > 100:
+        i = 100
+    if j < -100:
+        j = -100
+    if j < 0:
+        j *= -1
+        reverse2 = 2
+    if j > 100:
+        j = 100
+    k = i % 10
+    setModifier((i - k) // 10)
+    ser.write(b'q')
+    setModifier(k)
+    ser.write(b'r')
+    k = j % 10
+    setModifier((j - k) // 10)
+    ser.write(b's')
+    setModifier(k)
+    ser.write(b't')
+    setModifier(reverse1 + reverse2)
+    ser.write(b'u')

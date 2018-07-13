@@ -2,12 +2,10 @@
 
 
 
-1. Insert the miniSD card into the computer.
-2. Go to the boot folder which should appear in your file explorer. Alternatively you can navigate to the boot directory by entering the following into terminal:
+1. Insert the miniSD card into your computer.
+2. When the "Linky" drive appears, navigate to the **/boot** folder.
 
-    >cd ~/Volumes/boot
-
-3. Create a file in this directory called wpa_supplicant.conf. The file should contain the following text:
+3. Create a file in this directory called wpa_supplicant.conf. Open the file and paste the following text:
 
     >network={
     		ssid="YOUR_NETWORK_NAME"
@@ -15,7 +13,7 @@
     		key_mgmt=WPA-PSK
       }
 
-      Replace YOUR_NETWORK_NAME with your network name and YOUR_PASSWORD with your network password. Keep the quotation marks. The key_mgmt field specifies what kind of security the wifi network uses.
+      Replace YOUR_NETWORK_NAME with your WiFi network name and YOUR_PASSWORD with your WiFi pFssword. Keep the quotation marks. (The key_mgmt field specifies what kind of security the WiFi network uses.)
 
 4. With this file in place, Raspbian will move it in /etc/wpa_supplicant/ when the system is booted.
 

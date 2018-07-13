@@ -1,7 +1,7 @@
 # Download and install PyCharm
 
 # Set up an SSH mount point
-sudo apt-get install sshfs    #TODO: need sshfs for Mac and Windows
+sudo apt-get install sshfs    # OS X: "brew cask install osxfuse" and then "brew install sshfs", Windows: install sshfs (??)
 sudo mkdir /mnt/linky
 sudo sshfs -o allow_other pi@192.168.1.151:/ /mnt/linky
 # pswd: pi

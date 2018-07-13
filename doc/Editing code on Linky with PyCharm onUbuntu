@@ -1,7 +1,7 @@
 # Download and install PyCharm
 
 # Set up an SSH mount point
-sudo apt-get install sshfs
+sudo apt-get install sshfs    #TODO: need sshfs for Mac and Windows
 sudo mkdir /mnt/linky
 sudo sshfs -o allow_other pi@192.168.1.151:/ /mnt/linky
 # pswd: pi
@@ -16,7 +16,7 @@ cd Desktop/Linky/sample/
 python gyroTurnSpoon.py 
 
 # To reconnect after a reboot
-sudo rm -Rf linky
+sudo rm -Rf /mnt/linky
 sudo mkdir /mnt/linky
 sudo sshfs -o allow_other pi@192.168.1.151:/ /mnt/linky
 # pswd: pi

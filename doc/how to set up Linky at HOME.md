@@ -24,7 +24,7 @@
     If you see "Request timed out", then Linky is not connected. [TODO] link to a connection troubleshooting guide
 
 ## We're now going to connect to Linky so that you can use it's Desktop from your computer... 
-7 .Download and install VNC viewer
+7. Download and install VNC viewer
 
 8. Open VNC Viewer and enter the following into the field for the VNC server address:
 

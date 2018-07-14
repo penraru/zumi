@@ -7,10 +7,10 @@
 
 3. Create a file in this directory called wpa_supplicant.conf. Open the file and paste the following text:
 
-    >network={
-    		ssid="YOUR_NETWORK_NAME"
-    		psk="YOUR_PASSWORD"
-    		key_mgmt=WPA-PSK
+    >network={<br>
+    		  ssid="YOUR_NETWORK_NAME"<br>
+    		  psk="YOUR_PASSWORD"<br>
+    		  key_mgmt=WPA-PSK<br>
       }
 
       Replace YOUR_NETWORK_NAME with your WiFi network name and YOUR_PASSWORD with your WiFi pFssword. Keep the quotation marks. (The key_mgmt field specifies what kind of security the WiFi network uses.)
@@ -19,14 +19,14 @@
 [TODO] need photo 
 
 6. Test that Linky is connected to your WiFi by typing into the terminal:  
->ping linky.local
+    >ping linky.local
+    
+    If you see "Request timed out", then Linky is not connected. [TODO] link to a connection troubleshooting guide
 
-If you see "Request timed out", then Linky is not connected. [TODO] link to a connection troubleshooting guide
-
-## We're now going to connect to Linky so that you can use it's Desktop from your computer. 
+## We're now going to connect to Linky so that you can use it's Desktop from your computer... 
 7 .Download and install VNC viewer
 
-8 Open VNC Viewer and enter the following into the field for the VNC server address:
+8. Open VNC Viewer and enter the following into the field for the VNC server address:
 
 >linky.local
 

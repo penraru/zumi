@@ -13,7 +13,7 @@
     		  key_mgmt=WPA-PSK<br>
       }
 
-      Replace YOUR_NETWORK_NAME with your WiFi network name and YOUR_PASSWORD with your WiFi pFssword. Keep the quotation marks. (The key_mgmt field specifies what kind of security the WiFi network uses.)
+      Replace YOUR_NETWORK_NAME with your WiFi network name and YOUR_PASSWORD with your WiFi password. Keep the quotation marks. (The key_mgmt field specifies what kind of security the WiFi network uses.)
 
 5. Move the SDCard to the Pi and connect the power port to a power supply via the USB cable.
 [TODO] need photo 
@@ -24,7 +24,7 @@
     If you see "Request timed out", then Linky is not connected. [TODO] link to a connection troubleshooting guide
 
 ## We're now going to connect to Linky so that you can use it's Desktop from your computer... 
-7. Download and install VNC viewer
+7. Download and install VNC viewer here https://www.realvnc.com/en/connect/download/viewer/
 
 8. Open VNC Viewer and enter the following into the field for the VNC server address:
 

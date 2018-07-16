@@ -1,7 +1,12 @@
 ## Step 1: Download and install PyCharm
 
 ## Step 2: Set up an SSH mount point
-(Note: For OS X, first type `brew cask install osxfuse` and then `brew install sshfs`)
+(Note: For OS X, first you must intall Homebrew. Follow these steps:
+1. `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+
+2. `brew cask install osxfuse` 
+
+3. `brew install sshfs`)
 
 `sudo apt-get install sshfs`
 

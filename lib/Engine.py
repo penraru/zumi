@@ -6,18 +6,26 @@ import Linky_SerialCom as ropi
 
 speed = 30
 
-def go_straight():
+def go_forward():
     ropi.setMotor(speed, speed)
-    print(speed)
+    print("forward")
 
+def go_backward():
+    ropi.setMotor(speed, speed)
+    print("backward")
+    
 def turn_left():
     ropi.setMotor(speed, -speed)
+    print("left")
 
 def turn_right():
     ropi.setMotor(-speed, speed)
+    print("right")
 
 def stop():
     ropi.setMotor(0,0)
+    print("stop")
 
 def set_speed(s):
     speed = s
+    print("speed = "+str(s))

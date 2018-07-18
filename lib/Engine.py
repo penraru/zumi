@@ -11,7 +11,7 @@ def go_forward():
     print("forward")
 
 def go_backward():
-    ropi.setMotor(speed, speed)
+    ropi.setMotor(-speed, -speed)
     print("backward")
     
 def turn_left():

@@ -21,6 +21,3 @@ def stop():
 
 def set_speed(s):
     speed = s
-
-while 1:
-    go_straight()

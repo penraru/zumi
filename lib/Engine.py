@@ -28,4 +28,4 @@ def stop():
 
 def set_speed(s):
     speed = s
-    print("speed = "+str(s))
+    print("speed = "+str(speed))

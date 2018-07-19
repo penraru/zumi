@@ -2,6 +2,12 @@
 ## Linky SD Card Image Versioning Protocol
 ### Creating Images:
 
+Insert the SD Card you want to clone into your computer
+
+Open Terminal and locate your SD Card by typing in `diskutil list`
+
+Type `sudo dd if=/dev/diskX of=~/Desktop/raspberrypi.dmg` to create a dmg file. The X should be replaced by the disk number of the SD Card that can be located on the far left
+
 Example filename: `linkyh0s0.iso`
 
 In this example, the (h)ardware would be version 0, as would the (s)oftware.

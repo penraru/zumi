@@ -4,7 +4,7 @@
 
 Insert the SD Card you want to clone into your computer
 
-Open Terminal and locate your SD Card by typing in `diskutil list`
+Type `diskutil list`in Terminal and locate your SD Card using the NAME and SIZE columns
 
 Type `sudo dd if=/dev/diskX of=~/Desktop/raspberrypi.dmg` to create a dmg file. The X should be replaced by the disk number of the SD Card that can be located on the far left
 

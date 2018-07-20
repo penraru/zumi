@@ -31,8 +31,10 @@ When logging a new image, you must create a .txt file detailing the specifics of
 
 (Note: The bullet points should be subbed for dashes.)
 
-Once the .txt file has been made, the image and .txt should be compressed together using PiShrink(?).
+Once the .txt file has been made, the image and .txt should be compressed together using PiShrink or ZIP.
 
 Finally, the .zip should be uploaded to the `Linky SD Card Images` folder within the `Robocar` folder on the Robolink Google Drive
 
 Found here: https://drive.google.com/open?id=1GmKYLhqcIGYSJdso0mqw9ozfjdf9mTBq
+
+NOTE: If space is an issue, see if someone else can upload it. Until then, keep it safe on your computer or an external drive.

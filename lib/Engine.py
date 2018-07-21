@@ -1,4 +1,4 @@
-#All of the functions necessary to move Linky
+#Import this file to use all of the functions necessary to move Linky
 import time
 import sys
 sys.path.insert(0,'/home/pi/Desktop/Linky/src')

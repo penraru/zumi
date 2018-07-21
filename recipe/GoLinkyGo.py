@@ -8,4 +8,11 @@ import Engine as engine
 # Try to make her go forward, stop and go backwards.
 
 # WILLIAM: TO BE REMOVED ONCE TESTING IS COMPLETE 
-# engine.go_forward()
+# "FIXED" - WILLIAM
+engine.go_forward()
+time.sleep(1)
+engine.stop()
+time.sleep(1)
+engine.go_backward()
+time.sleep(1)
+engine.stop()

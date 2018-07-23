@@ -7,12 +7,4 @@ import Engine as engine
 # See her available functions at Linky/lib/Engine.py
 # Try to make her go forward, stop and go backwards.
 
-# WILLIAM: TO BE REMOVED ONCE TESTING IS COMPLETE 
-# "FIXED" - WILLIAM
-engine.go_forward()
-time.sleep(1)
-engine.stop()
-time.sleep(1)
-engine.go_backward()
-time.sleep(1)
-engine.stop()
+# You may need to use time.sleep(1) between commands.

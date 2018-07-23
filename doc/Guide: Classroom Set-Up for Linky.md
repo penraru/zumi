@@ -29,8 +29,8 @@ Wait 2 minutes for the Pi to book, then unplug it again.
 ## We're now going to connect to Linky so that you can use it's Desktop from your computer...
 7. Download and install VNC viewer
 
-8. Open VNC Viewer and enter the following into the field for the VNC server address:
+8. Open VNC Viewer and enter the IP address into the field for the VNC server address:
 
->linky.local
+> <ip_address>
 
 When prompted, the default password you will type in will be “pi”. Give the display a few seconds to load.

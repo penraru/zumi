@@ -4,9 +4,9 @@
 
 Insert the SD Card you want to clone into your computer
 
-Open Terminal and locate your SD Card by typing in `diskutil list`
+Type `diskutil list` in Terminal and locate your SD Card using the NAME and SIZE columns
 
-Type `sudo dd if=/dev/diskX of=~/Desktop/raspberrypi.dmg` to create a dmg file. The X should be replaced by the disk number of the SD Card that can be located on the far left
+Type `sudo dd if=/dev/diskX of=~/Desktop/[FILENAME]` to create an iso file. The X should be replaced by the disk number of the SD Card that can be located on the far left
 
 Example filename: `linkyh0s0.iso`
 
@@ -31,8 +31,10 @@ When logging a new image, you must create a .txt file detailing the specifics of
 
 (Note: The bullet points should be subbed for dashes.)
 
-Once the .txt file has been made, the image and .txt should be compressed together using PiShrink(?).
+Once the .txt file has been made, the image and .txt should be compressed together using PiShrink or ZIP.
 
 Finally, the .zip should be uploaded to the `Linky SD Card Images` folder within the `Robocar` folder on the Robolink Google Drive
 
 Found here: https://drive.google.com/open?id=1GmKYLhqcIGYSJdso0mqw9ozfjdf9mTBq
+
+NOTE: If space is an issue, see if someone else can upload it. Until then, keep it safe on your computer or an external drive.

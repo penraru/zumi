@@ -7,6 +7,8 @@ import Linky_SerialCom as ropi
 speed = 30
 
 # 7-19-18 These do not appear to be working. Linky is freaking out! 
+[TODO: add parameters in each method to specify how long]
+
 def go_forward():
     time.sleep(2)
     ropi.setMotor(speed, speed)

@@ -3,11 +3,11 @@ webcam = cv2.VideoCapture(0)
 
 # 1. Enter the HSV values for the fascinating object. You should have used the ColorCalibrator for this.
 hue = 0
-sat = 219
-val = 177
-hrange = 23
-srange = 50
-vrange = 124
+sat = 0
+val = 0
+hrange = 0
+srange = 0
+vrange = 0
 
 def filterColor(frame):
    # Creates a boundary for the color that gets update by trackbars
@@ -41,24 +41,17 @@ while True:
     countour = get_best_contour()
     x, y, w, h = cv2.boundingRect(countour)
 
-    print "Fascinating object found at " + str(x) + ", " + str(y)
+    print "Fascinating object found at x:" + str(x) + ", y:" + str(y)
 
     height, width, layers = frame.shape
     middleXpixel = width / 2
 
     # 3. CHALLENGE: Print whether the robot should move left or right to follow the fascinating object
-    # pixel tolerance we will allow
-    tolerance = 20
-    # Logic for robot (Remember camera is mirrored)
-    if (x > (middleXpixel + tolerance)):
-        # example: middle point 640/2+20= 340
-        print("go to the left side")
-    elif (x < (middleXpixel - tolerance)):
-        # example: middle point 640/2-20 = 280
-        print("go to the right side")
-    else:
-        # this will only happen if between 280-340
-        print("go to the middle")
+
+
+
+
+
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break

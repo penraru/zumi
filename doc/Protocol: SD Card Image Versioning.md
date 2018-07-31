@@ -31,8 +31,8 @@ When logging a new image, you must create a .txt file detailing the specifics of
 
 (Note: The bullet points should be subbed for dashes.)
 
-Once the .txt file has been made, the image and .txt should be given the same name as the .iso.
+Once the .txt file has been made, the .txt should be given the same name as the .iso.
 
-Finally, the .iso and .txt should be uploaded to Robolink's `WDMyCloud` shared server within `/Public/Linky Images/`
+Finally, both the .iso and .txt should be uploaded to Robolink's `WDMyCloud` shared server within `/Public/Linky Images/`.
 
 If you need an image and are away from the office, please ask for someone to zip and share the image with you over Google Drive, or check with their .txt and update your image accordingly.

@@ -18,7 +18,7 @@ The version numbers should correspond to the iteration that they are a part of.
 
 ### Storing Images:
 
-When logging a new image, you must create a `.txt` file detailing the specifics of the image in a format such that the file matches this example:
+When logging a new image, you must create a .txt file detailing the specifics of the image in a format such that the file matches this example:
 >ON THIS IMAGE
 >- TensorFlow
 >- Python 2.7
@@ -31,8 +31,8 @@ When logging a new image, you must create a `.txt` file detailing the specifics 
 
 (Note: The bullet points should be subbed for dashes.)
 
-Once the `.txt` file has been made, the image and `.txt` should be given the same name as the `.iso`.
+Once the .txt file has been made, the image and .txt should be given the same name as the .iso.
 
-Finally, the `.iso` and `.txt` should be uploaded to Robolink's `WDMyCloud` shared server within `/Public/Linky Images/`
+Finally, the .iso and .txt should be uploaded to Robolink's `WDMyCloud` shared server within `/Public/Linky Images/`
 
-NOTE: If space is an issue, see if someone else can upload it. Until then, keep it safe on your computer or an external drive.
+If you need an image and are away from the office, please ask for someone to zip and share the image with you over Google Drive, or check with their .txt and update your image accordingly.

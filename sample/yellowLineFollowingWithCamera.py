@@ -59,38 +59,49 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
         cv2.drawContours(mask, contours, -1, (0,255,0),1)
 
 
-        #navigate
-        ropi.setSpeed(50)
-        if cx >= 100:
-            print("RIGHT")
-            ropi.right()
-	    time.sleep(0.3)
-	    ropi.stumble()
-	    time.sleep(0.2)
-	    ropi.stop()
-        elif cx < 100 and cx > 70:
-            print("STRAIGHT")
-            ropi.stumble()
-	    time.sleep(0.3)
-        elif cx <= 70:
-            print("LEFT")
-            ropi.left()
-	    time.sleep(0.2)
-	    ropi.stumble()
-	    time.sleep(0.2)
-	    ropi.stop()
+      # navigate
+      # ropi.setSpeed(30)
+      # ropi.forward()
+      # counter = 0
+
+      if cx >= 100:
+          if counter > 10:
+              print("RIGHT")
+              ropi.setSpeed(10)
+              ropi.right()
+              counter = 0
+          # time.sleep(0.3)
+          # ropi.stop()
+          # ropi.forward()
+          # time.sleep(0.2)
+          counter += 1
+
+      elif cx < 100 and cx > 70:
+          if counter > 10:
+              ropi.setSpeed(30)
+              print("STRAIGHT")
+              ropi.forward()
+              # time.sleep(0.3)
+              # ropi.stop()
+              counter = 0
+          counter += 1
+      elif cx <= 70:
+          if counter > 10:
+              print("LEFT")
+              ropi.setSpeed(10)
+              ropi.left()
+              counter = 0
+          # time.sleep(0.3)
+          # ropi.stop()
+          # ropi.forward()
+          counter += 1
+
     else:
-	ropi.stop()
+    ropi.stop()
+
+    # cv2.imshow("Result", mask)
 
 
-   # cv2.imshow("Result", mask)
+rawCapture.truncate(0)
 
-    rawCapture.truncate(0)
-
-    #key = cv2.waitKey(1) & 0xFF
-
-    #if key == ord("q"):
-    #    break
-
-#ropi.stop()
-#cv2.destroyAllWindows()
+# key = cv2.waitKey(1) & 0xFF

@@ -1,6 +1,6 @@
 
 ## Linky SD Card Image Versioning Protocol
-### Creating Images:
+### Clone Image from SD Card to Computer:
 
 Insert the SD Card you want to clone into your computer
 
@@ -36,3 +36,19 @@ Once the .txt file has been made, the .txt should be given the same name as the 
 Finally, both the .iso and .txt should be uploaded to Robolink's `WDMyCloud` shared server within `/Public/Linky Images/`.
 
 If you need an image and are away from the office, please ask for someone to zip and share the image with you over Google Drive, or check with their .txt and update your image accordingly.
+
+### Flashing an SD Card:
+
+Insert the SD Card you want to flash into your computer
+
+Download and open Etcher
+
+Press 'Select Image'
+
+Go to 'WDMyCloud' from the section Shared -> 'Public' -> 'Linky Images'
+
+Select and open the .iso file: 'linkyhOsO.iso'
+
+Select a drive (ex.Apple SDXC Reader Media - 31.91 GB) and press 'Continue'
+
+Press 'Flash' to start flashing your sd card

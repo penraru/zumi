@@ -1,7 +1,6 @@
 # USAGE
 # python test_network.py --model apple_not_apple.model
 
-#model 1 is for computer, model 2 is for pi
 
 # import the necessary packages
 from keras.preprocessing.image import img_to_array
@@ -18,7 +17,7 @@ ap.add_argument("-m", "--model", required=True,
 #ap.add_argument("-i", "--image", required=True,
 #	help="path to input image")
 args = vars(ap.parse_args())
-number = 306
+number = 0
 cap = cv2.VideoCapture(0)
 
 # load the trained convolutional neural network

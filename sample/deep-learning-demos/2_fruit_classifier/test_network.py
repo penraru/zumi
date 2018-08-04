@@ -6,7 +6,6 @@ from keras.preprocessing.image import img_to_array
 from keras.models import load_model
 import numpy as np
 import argparse
-import imutils
 import cv2
 
 
@@ -53,7 +52,6 @@ while True:
 	label = "{}: {:.2f}%".format(label, proba * 100)
 
 	# draw the label on the image
-	#output = imutils.resize(orig, width=400)
 	output = cv2.resize(orig, (0,0), fx=0.5, fy=0.5)
 	cv2.putText(output, label, (10, 25),  cv2.FONT_HERSHEY_SIMPLEX,
 	0.7, (0, 255, 0), 2)

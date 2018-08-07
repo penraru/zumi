@@ -95,9 +95,6 @@
 #define M1  1
 #define M2  2
 
-bool getTurnBias();
-void setTurnBias();
-
 void initialize();
 int ModeSelect();
 
@@ -355,6 +352,5 @@ void LedDisplay(int count, int time);
 #define NOTE_CS8 4435
 #define NOTE_D8  4699
 #define NOTE_DS8 4978
-
 
 

@@ -119,15 +119,15 @@ void RemoconControl(int speed)
 
 
 //-----------------------------------------------------------------------------------------------------------------------//
-//---------------------------------------------------- LineTracer MODIFIED-----------------------------------------------//
+//-------------------------------------------------------- LineTracer ---------------------------------------------------//
 //-----------------------------------------------------------------------------------------------------------------------//
-int baseLV = 950;
+int  baseLV = 950;
 int  baseLV_L = 1023;
-  int  baseLV_R = 1023;
+int  baseLV_R = 1023;
 
 void setupLineTracer() 
 {
-  //int sensorFF = analogRead(SFF);
+  //int  sensorFF = analogRead(SFF);
   //int  baseLV_L = 1023;
   //int  baseLV_R = 1023;
 
@@ -159,11 +159,9 @@ void setupLineTracer()
 
 void LineTracer(int speed)
 {
-  //delay(300);
-  /*
-  //int sensorFF = analogRead(SFF);
-  int  baseLV_L = 1023;
-  int  baseLV_R = 1023;
+  //int  sensorFF = analogRead(SFF);
+  //int  baseLV_L = 1023;
+  //int  baseLV_R = 1023;
 
   //sample the minim. values of the sensor
   for (int i = 0; i < 100; i++)
@@ -182,45 +180,32 @@ void LineTracer(int speed)
   EEPROM.write(EEP_LINE_SEN_BASE_RH, (baseLV_R >> 8) & 0xff);
   EEPROM.write(EEP_LINE_SEN_BASE_RL, baseLV_R & 0xff);
 
-
-  // Sound_Beep2();
-
-  int melody[] = {1702, 593, 1243};
-  int tempo[] = {12, 12, 8};
-  int obstacle[] = {1680, 1210};
-  int tempo2[] = {5, 5};
-  SoundProcess(melody, tempo, 3);
-  */
   int obstacle[] = {1680, 1210};
   int tempo2[] = {5, 5};
   byte readbyte = 0;
   while (1)
   {
     if(Serial.available() > 0)
- {
-  readbyte = Serial.read();
-  //if there is something sent via the serial monitor save the byte
-  if (readbyte != 'M') {
-    break;
-  }
- } 
+    {
+      break;
+    } 
     int sensorFF = analogRead(SFF);
     int sensorBL = analogRead(SBL);
     int sensorBR = analogRead(SBR);
     if (sensorFF < 400)
-  {
-    //DCMove(backward, speed);
-    //delay(150);
-    SoundProcess(obstacle, tempo2, 2);
-    DCMove(right, speed);
-    Serial.println("1");
-    delay(900);
-  }
+    {
+      DCMove(backward, speed);
+      delay(150);
+      SoundProcess(obstacle, tempo2, 2);
+      DCMove(right, speed);
+      Serial.println("1");
+      delay(900);
+    }
     if (sensorBL < baseLV_L && sensorBR < baseLV_R)   DCMove(forward, speed);
     else if (sensorBL > baseLV_L && sensorBR < baseLV_R)    DCMove(right, speed);
     else if (sensorBR > baseLV_R && sensorBL < baseLV_L)    DCMove(left, speed);
-    else if (sensorBL > baseLV_L && sensorBR > baseLV_R && getTurnBias() == 0)   DCMove(left, 15);
-    else if (sensorBL > baseLV_L && sensorBR > baseLV_R && getTurnBias() == 1)   DCMove(right, 15);
+    else if (sensorBL > baseLV_L && sensorBR > baseLV_R == 0)   DCMove(left, 15);
+    else if (sensorBL > baseLV_L && sensorBR > baseLV_R == 1)   DCMove(right, 15);
     else if (sensorBL < baseLV_L)   DCMove(left, speed); 
     else if (sensorBR < baseLV_R)   DCMove(right, speed);
   }
@@ -280,4 +265,3 @@ void CliffBot(int speed)
     DCMove(forward, speed);
   }
 }
-

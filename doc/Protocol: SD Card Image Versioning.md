@@ -1,6 +1,7 @@
 
 ## Linky SD Card Image Versioning Protocol
 If you want to get the latest master image onto your Linky, use the section called **Flashing an SD Card**.
+
 If you want to upload your latest image to the SDCard image repository, use **Storing Images**.
 
 ### Storing Images:

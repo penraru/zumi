@@ -7,11 +7,9 @@ import Engine as engine
 # See her available functions at Linky/lib/Engine.py
 # Try to make her go forward, stop and go backwards.
 
-[TODO: remove necessity for sleeps using Engine library]
+# You may need to use time.sleep(1) between commands.
 
 engine.go_forward()
-time.sleep(1)
-engine.stop()
 time.sleep(1)
 engine.go_backward()
 time.sleep(1)

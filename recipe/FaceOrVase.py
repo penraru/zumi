@@ -15,5 +15,5 @@ while 1:
 
 cv2.destroyAllWindows()
 
-# Challenge: One vase? Or two faces? Use contour detection to show where the vase is in this famous optical illusion
+# Challenge: One vase? Or two faces? Use contour detection to draw an outline around the vase in this famous optical illusion
 # https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_imgproc/py_contours/py_contours_begin/py_contours_begin.html

@@ -15,17 +15,17 @@ Python (version 2.7 or higher)     [https://www.python.org/downloads/](https://w
 
 ## Install Eclipse Python plugin
 
-1. Open up Eclipse
+1. Open up Eclipse.
 
-2. Goto the toolbar **Help** and press **Install New Software**
+2. Goto the toolbar **Help** and press **Install New Software**.
 
-3. Insert the link http://pydev.org/updates under the section **Work with** and press **Add** to use PyDev Plug. Press **Next**.
+3. Insert the link http://pydev.org/updates under the section **Work with**. Press **Add** to use the PyDev Plug and **Next**.
 
-4. The screen should show Install details with item name "PyDev for Eclipse" and the version. Press **Next**.
+4. The screen should show Install details with item name "PyDev for Eclipse" and its version. Press **Next**.
 
 5. Installing should take few minutes, showing progress on the bottom right corner of Eclipse.
 
-6. When installation is done, goto the toolbar **Windows** and press **Preferences**.
+6. When installation is complete, goto the toolbar **Windows** and press **Preferences**.
 
 7. Select PyDev on the left margin. Goto **Interpreters** then to **Python Interpreter**.
 

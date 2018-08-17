@@ -89,6 +89,6 @@ python “The_name_of_the_file”
 
 **_*Make sure your Linky is turned ON (Check for Blue LED Light)_**
 
-Some basic Git commands are:
+
 
 

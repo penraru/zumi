@@ -8,9 +8,16 @@ The first thing you need to do is connect her to your WiFi network.
 2. Use the miniUSB cable to connect the USB port on the Raspberry Pi to your computer.<BR>
 [TODO] needs photo
 
-3. https://github.com/RobolinkInc/Linky/blob/master/doc/Guide:%20Home%20Set-Up%20for%20Linky.md <BR>
-[TODO] update WiFi configuration instructions for static IP address
+3. Goto System Preferences → Network → RNDIS/Gadget (should be in yellow light).<BR>
+[TODO] needs photo
+
+4. Configure IPv4 should be set to Manually.<BR>
+[TODO] needs photo
+
+5. Set IP Address and Router to 192.168.222.222. Subnet mask to 255.255.255.0.<BR>
+[TODO] needs photo
+
+6. Press Apply
 
 # Then you can see what she sees by clicking here!
 http://raspberrypi.local:5555/notebooks/Linky/Zumi%20Cam.ipynb <BR>
-[TODO] Use static IP address instead of raspberrypi.local ☝

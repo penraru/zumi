@@ -1,4 +1,4 @@
-# Use Eclipse to install PyDev and write codes
+# Use Eclipse to install PyDev and write code
 [Install Eclipse Python plugin](#install-eclipse-python-plugin)
 
 [Setup Remote Systems Explorer for Raspberry Pi](#setup-remote-systems-explorer-for-raspberry-pi)

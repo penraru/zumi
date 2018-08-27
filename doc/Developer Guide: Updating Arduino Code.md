@@ -17,7 +17,7 @@ Updating Linky_SerialCom.ino with Arduino
   
     1) the right-arrow-button 
     
-                    or
+    or
                     
     2) "sketch" from the toolbar and "upload"
 

@@ -2,7 +2,7 @@
 
 
 
-1. Insert the miniSD card into your computer.
+1. Insert the microSD card into your computer.
 2. When the "Linky" drive appears, navigate to the **/boot** folder.
 
 3. Place a file in this directory called wpa_supplicant.conf. Download the file [here.](https://drive.google.com/file/d/1_KYY2QRLB4kZ1Y1tzCxqEQ1NIvIHUdKZ/view?usp=sharing)

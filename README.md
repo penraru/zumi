@@ -20,4 +20,4 @@ The first thing you need to do is connect her to your WiFi network.
 6. Press Apply
 
 # Then you can see what she sees by clicking here!
-http://raspberrypi.local:5555/notebooks/Linky/Zumi%20Cam.ipynb <BR>
+http://zumi.local:5555/notebooks/recipe/ZumiCam.ipynb <BR>

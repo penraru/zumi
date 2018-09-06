@@ -1,7 +1,7 @@
 #Import this file to use all of the functions necessary to move Linky
 import time
 import sys
-sys.path.insert(0,'/home/pi/Desktop/Linky/src')
+sys.path.insert(0,'/home/pi/Zumi/src')
 import Linky_SerialCom as ropi
 
 speed = 30

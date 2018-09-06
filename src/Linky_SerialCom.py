@@ -96,4 +96,5 @@ def setMotor(i, j):
     a = a + chr(i)
     a = a + chr(j)
     a = a + '\n'
-    ser.write(a)
+    ser.write(a.encode())
+

@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(0,'/home/pi/Desktop/Linky/lib')
+sys.path.insert(0,'/home/pi/Zumi/lib')
 import Infrared as infrared
 import time
 

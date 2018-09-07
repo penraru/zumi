@@ -19,7 +19,7 @@ def readSensors():
     #Battery Level
     #Mic level
     ser.write(b'L\n')
-    read_serial = ser.readline()
+    read_serial = ser.readline().decode('utf-8')
     topLeft,topMiddle,topRight,bottomLeft,bottomRight,batterylvl,miclvl = read_serial.split(",")
     return int(topLeft),int(topMiddle),int(topRight),int(bottomLeft),int(bottomRight),float(batterylvl),int(miclvl)
 

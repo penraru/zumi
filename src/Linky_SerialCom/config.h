@@ -1,4 +1,4 @@
-#include "arduino.h"
+#include "Arduino.h"
 #include <EEPROM.h>
 //motor pin (AIN1 ~ BIN2)
 

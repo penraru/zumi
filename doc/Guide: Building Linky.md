@@ -45,14 +45,14 @@
 ![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/6.3.JPG "Logo Title Text 1")
 ![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/6.4.JPG "Logo Title Text 1")
 ## Step 7: Adding the Battery
-![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/7.1.JPG "Logo Title Text 1")
-![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/7.2.JPG "Logo Title Text 1")
-![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/7.3.JPG "Logo Title Text 1")
+![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/7.1.jpg "Logo Title Text 1")
+![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/7.2.jpg "Logo Title Text 1")
+![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/7.3.jpg "Logo Title Text 1")
 ## Step 8: Setting up the Raspberry Pi and the Camera
-![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/8.1.JPG "Logo Title Text 1")
-![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/8.2.JPG "Logo Title Text 1")
-![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/8.3.JPG "Logo Title Text 1")
-![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/8.4.JPG "Logo Title Text 1")
+![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/8.1.jpg "Logo Title Text 1")
+![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/8.2.jpg "Logo Title Text 1")
+![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/8.3.jpg "Logo Title Text 1")
+![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/8.4.jpg "Logo Title Text 1")
 ## Step 9: Attaching the Raspberry Pi and connecting with Circuit Board
-![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/9.1.JPG "Logo Title Text 1")
-![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/9.2.JPG "Logo Title Text 1")
+![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/9.1.jpg "Logo Title Text 1")
+![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/9.2.jpg "Logo Title Text 1")

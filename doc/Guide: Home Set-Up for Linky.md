@@ -20,7 +20,7 @@ When you open wpa_supplicant.conf., it should look like this:
 [TODO] need photo
 
 6. Test that Linky is connected to your WiFi by typing into the terminal:  
-    >ping linky.local
+    >ping zumi.local
 
     If you see "Request timed out", then Linky is not connected. [TODO] link to a connection troubleshooting guide
 

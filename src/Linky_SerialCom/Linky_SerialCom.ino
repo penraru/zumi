@@ -17,6 +17,7 @@ int mode = 0;
 int basicSpeed = 100;
 int speed = 100;
 int speedStepSize = 10;
+int irBits = 0;
 
 int inBuffer[64];
 bool isReading = 1;
@@ -130,6 +131,13 @@ void loop()
         //------------------------------------------------------------------------
         case 81: //character "Q"
           DCMove(stop,speed);
+          break;
+
+        case 82: //character "R"
+          if(analogRead(SBL)>900) irBits = 10;
+          else irBits = 0;
+          if(analogRead(SBR)>900) irBits++;
+          Serial.println(irBits);
           break;
   
         //------------------------------------------------------------------------

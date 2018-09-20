@@ -30,3 +30,10 @@ def get_bottom_right():
 
 def get_bottom_colors():
     return linky.requestBottomSensorData()
+   
+def get_bottom_left_color():
+    topLeft, topMiddle, topRight, bottomLeft, bottomRight, batterylvl, miclvl = linky.readSensors()
+    if bottomLeft > 960 and bottomLeft < 1005:
+        return "black"
+    elif bottomLeft > 840 and bottomLeft < 895:
+        return "white"

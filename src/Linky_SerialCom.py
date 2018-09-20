@@ -98,3 +98,10 @@ def setMotor(i, j):
     a = a + '\n'
     ser.write(a.encode())
 
+def requestBottomSensorData():
+    ser.write(b'R\n')
+    read_serial = ser.readline().decode('utf8')
+    if read_serial == '':
+        return -1
+    else:
+        return int(read_serial)

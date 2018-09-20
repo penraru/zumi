@@ -8,7 +8,7 @@ PIDFile=/run/jupyter.pid
 ExecStart=/usr/local/bin/jupyter-notebook --no-browser --config=/home/pi/.jupyter/jupyter_notebook_config.py
 User=pi
 Group=pi
-WorkingDirectory=/home/pi/Zumi
+WorkingDirectory=/home/pi/zumi
 Restart=always
 RestartSec=10
 #KillMode=mixed

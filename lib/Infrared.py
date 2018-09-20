@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(0,'/home/pi/Zumi/src')
+sys.path.insert(0,'/home/pi/zumi/src')
 import Linky_SerialCom as linky
 import time
 

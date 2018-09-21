@@ -29,6 +29,26 @@ def turn_left():
 def turn_right():
     ropi.setMotor(speed, -speed)
     print("right")
+    
+def right_a_bit():
+    ropi.setMotor(10, -5)
+    time.sleep(.1)
+    ropi.stop()
+    
+def left_a_bit():
+    ropi.setMotor(-5, 10)
+    time.sleep(.1)
+    ropi.stop()
+    
+def forward_a_bit():
+    ropi.setMotor(speed, speed)
+    time.sleep(.1)
+    ropi.stop()
+    
+def back_a_bit():
+    ropi.setMotor(-speed, -speed)
+    time.sleep(.1)
+    ropi.stop()
 
 def set_speed(s):
     global speed

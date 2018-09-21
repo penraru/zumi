@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(0,'/home/pi/Zumi/lib')
+sys.path.insert(0,'/home/pi/zumi/lib')
 
 import Engine as engine
 import Infrared as infrared
@@ -45,15 +45,17 @@ try:
         elif char == curses.KEY_RIGHT:
             # print doesn't work with curses, use addstr instead
             screen.addstr(0, 0, 'right')
-            engine.turn_right()
+            engine.right_a_bit()
         elif char == curses.KEY_LEFT:
             screen.addstr(0, 0, 'left ') 
-            engine.turn_left()
+            engine.left_a_bit()
         elif char == curses.KEY_UP:
             screen.addstr(0, 0, 'up   ') 
-            engine.go_forward()
+            engine.forward_a_bit()
         elif char == curses.KEY_DOWN:
             screen.addstr(0, 0, 'down ')
+            engine.back_a_bit()
+        else:
             engine.stop()
 finally:
     # shut down cleanly

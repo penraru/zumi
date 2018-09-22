@@ -54,3 +54,6 @@ def set_speed(s):
     global speed
     speed = s
     print("speed = "+str(speed))
+
+def start_line_follower():
+    ropi.lineTracer()

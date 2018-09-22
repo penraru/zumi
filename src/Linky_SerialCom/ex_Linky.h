@@ -121,47 +121,10 @@ void RemoconControl(int speed)
 //-----------------------------------------------------------------------------------------------------------------------//
 //-------------------------------------------------------- LineTracer ---------------------------------------------------//
 //-----------------------------------------------------------------------------------------------------------------------//
-int  baseLV = 950;
-int  baseLV_L = 1023;
-int  baseLV_R = 1023;
-
-void setupLineTracer() 
-{
-  //int  sensorFF = analogRead(SFF);
-  //int  baseLV_L = 1023;
-  //int  baseLV_R = 1023;
-
-  //sample the minim. values of the sensor
-  for (int i = 0; i < 100; i++)
-  {
-    baseLV_L  = min(analogRead(SBL), baseLV_L);
-    baseLV_R  = min(analogRead(SBR), baseLV_R);
-  }
-
-  //in case it goes to low add threshold of 50
-  baseLV_L += 25;
-  baseLV_R += 25;
-
-  EEPROM.write(EEP_LINE_SEN_BASE_LH, (baseLV_L >> 8) & 0xff);
-  EEPROM.write(EEP_LINE_SEN_BASE_LL, baseLV_L & 0xff);
-
-  EEPROM.write(EEP_LINE_SEN_BASE_RH, (baseLV_R >> 8) & 0xff);
-  EEPROM.write(EEP_LINE_SEN_BASE_RL, baseLV_R & 0xff);
-
-  // Sound_Beep2();
-
-  int melody[] = {1702, 593, 1243};
-  int tempo[] = {12, 12, 8};
-  SoundProcess(melody, tempo, 3);
-
-
-}
-
 void LineTracer(int speed)
 {
-  //int  sensorFF = analogRead(SFF);
-  //int  baseLV_L = 1023;
-  //int  baseLV_R = 1023;
+  int  baseLV_L = 1023;
+  int  baseLV_R = 1023;
 
   //sample the minim. values of the sensor
   for (int i = 0; i < 100; i++)
@@ -180,27 +143,14 @@ void LineTracer(int speed)
   EEPROM.write(EEP_LINE_SEN_BASE_RH, (baseLV_R >> 8) & 0xff);
   EEPROM.write(EEP_LINE_SEN_BASE_RL, baseLV_R & 0xff);
 
-  int obstacle[] = {1680, 1210};
-  int tempo2[] = {5, 5};
-  byte readbyte = 0;
   while (1)
   {
     if(Serial.available() > 0)
     {
       break;
     } 
-    int sensorFF = analogRead(SFF);
     int sensorBL = analogRead(SBL);
     int sensorBR = analogRead(SBR);
-    if (sensorFF < 400)
-    {
-      DCMove(backward, speed);
-      delay(150);
-      SoundProcess(obstacle, tempo2, 2);
-      DCMove(right, speed);
-      Serial.println("1");
-      delay(900);
-    }
     if (sensorBL < baseLV_L && sensorBR < baseLV_R)   DCMove(forward, speed);
     else if (sensorBL > baseLV_L && sensorBR < baseLV_R)    DCMove(right, speed);
     else if (sensorBR > baseLV_R && sensorBL < baseLV_L)    DCMove(left, speed);

@@ -105,3 +105,6 @@ def requestBottomSensorData():
         return -1
     else:
         return int(read_serial)
+
+def lineTracer():
+    ser.write(b'K\n')

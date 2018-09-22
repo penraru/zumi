@@ -42,7 +42,7 @@ def left_a_bit():
     
 def forward_a_bit():
     ropi.setMotor(speed, speed)
-    time.sleep(.1)
+    time.sleep(.3)
     ropi.stop()
     
 def back_a_bit():

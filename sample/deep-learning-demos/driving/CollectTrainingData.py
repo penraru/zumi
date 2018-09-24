@@ -8,14 +8,14 @@ screen = curses.initscr()
 curses.noecho()
 curses.cbreak()
 screen.keypad(True)
-screen.nodelay(True)
+# screen.nodelay(True)
 
 from picamera import PiCamera
 camera = PiCamera()
 camera.resolution = (32, 32)
 camera.start_preview()
 
-frame_index = 0
+command_number = 0
 command = ""
 
 try:
@@ -37,13 +37,13 @@ try:
         elif char == curses.KEY_DOWN:
             command = "down"
             engine.back_a_bit()
-        else:
-            engine.stop()
+#         else:
+#             engine.stop()
             
         screen.addstr(0, 0, command)
             
-        frame_index += 1
-        fileName = "/home/pi/zumi/sample/deep-learning-demos/driving/images/" + str(frame_index) + "." + command + ".jpg"
+        command_number += 1
+        fileName = "/home/pi/zumi/sample/deep-learning-demos/driving/images/" + str(command_number) + "." + command + ".jpg"
         camera.capture(fileName)
         command = ""
             
@@ -51,3 +51,4 @@ finally:
     curses.nocbreak(); screen.keypad(0); curses.echo()
     curses.endwin()
     camera.close()
+    engine.stop()

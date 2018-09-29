@@ -1,7 +1,9 @@
+print("Use up, down, and right arrows to control Zumi. Down arrow to save training data to Cloud. Console loading...")
+
 import sys
 sys.path.insert(0,'/home/pi/zumi/lib')
 import Engine as engine
-engine.set_speed(15)
+import TrainingDataHelper as data_helper
 
 import curses
 screen = curses.initscr()
@@ -18,14 +20,23 @@ camera.start_preview()
 command_number = 0
 command = ""
 
+def save_training_data():
+    data_helper.upload_images_to_cloud()
+    data_helper.clear_images_from_zumi()
+    clean_up()
+    
+def clean_up():
+    curses.nocbreak(); screen.keypad(0); curses.echo()
+    curses.endwin()
+    camera.close()
+    engine.stop()
+    exit()
+
 try:
     while True:
             
         char = screen.getch()
-        if char == ord('q'): 
-            camera.close()
-            break
-        elif char == curses.KEY_RIGHT:
+        if char == curses.KEY_RIGHT:
             command = 'right'
             engine.right_a_bit()
         elif char == curses.KEY_LEFT:
@@ -35,11 +46,8 @@ try:
             command = 'up' 
             engine.forward_a_bit()
         elif char == curses.KEY_DOWN:
-            command = "down"
-            engine.back_a_bit()
-#         else:
-#             engine.stop()
-            
+            save_training_data()
+                          
         screen.addstr(0, 0, command)
             
         command_number += 1
@@ -48,7 +56,6 @@ try:
         command = ""
             
 finally:
-    curses.nocbreak(); screen.keypad(0); curses.echo()
-    curses.endwin()
-    camera.close()
-    engine.stop()
+    clean_up()
+    
+

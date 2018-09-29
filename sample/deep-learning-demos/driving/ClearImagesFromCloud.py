@@ -1,0 +1,3 @@
+import TrainingDataHelper as data_helper
+
+data_helper.clear_images_from_cloud()

@@ -44,24 +44,23 @@ def setMotor(i, j):
         i = 100
     if j>100:
         j = 100
-    bus.write_i2c_block_data(address, a, [i, j])
+    bus.write_i2c_block_data(address, a, [int(i), int(j)])
 
 def setSpeed(i):
     if i < 0:
         i = 0
     if i > 100:
         i = 100
-    bus.write_byte_data(address, 70, i)
+    bus.write_byte_data(address, 70, int(i))
 
 def turnDegrees(i):
     a=69
     if i < 0:
         i=-i
         a=68
-    i/=5
-    if i > 255:
-        i = 255
-    bus.write_byte_data(address, a, i)
+    if i > 180:
+        i = 180
+    bus.write_byte_data(address, a, int(i))
 
 def waitUntilTurnDegrees():
     while bus.read_byte(address) == 1:

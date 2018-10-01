@@ -1,0 +1,69 @@
+# prep code for maker demo
+print("Importing picamera...")
+import picamera
+import picamera.array
+
+import sys
+sys.path.insert(0, '/home/pi/zumi/lib')
+print("Importing Engine...")
+#import Engine as engine
+
+print("Importing numpy...")
+import numpy as np
+
+print("Importing PIL...")
+from PIL import Image
+
+print("Importing keras...")
+from keras.models import load_model
+from keras.preprocessing.image import img_to_array
+
+import time
+#sys.path.insert(0, '/home/pi/Desktop/zumi/lib')
+
+
+def coke():
+    print("\n\n🍹 🍹 🍹 🍹 🍹 Coke! 🍹 🍹 🍹 🍹 🍹\n\n")
+    #engine.go_backward()
+    #time.sleep(2)
+    #engine.stop()
+
+def apple():
+    print("\n\n🍏 🍏 🍏 🍏 🍏 Apple! 🍏 🍏 🍏 🍏 🍏\n\n")
+    #engine.turn_right()
+    #time.sleep(3)
+    #engine.stop()
+    # play a sound, get a mp3 file
+
+def nothing():
+    print("Background")
+
+functionsKey = {
+        "1": nothing,
+        "0": apple,
+        "2": coke
+        }
+
+print("Loading model...")
+model = load_model('second_try.h5')
+with picamera.PiCamera() as camera:
+    try:
+        while 1:
+            with picamera.array.PiRGBArray(camera) as output:
+                input("Type something to start: ")
+                camera.capture(output, 'rgb')
+                x= Image.fromarray(output.array).resize((150,150))
+                x = np.expand_dims(x, axis=0)
+                #pred = model.predict_classes(x)
+                #functionsKey[(str(int(pred)))]()
+                probs=model.predict_proba(x)
+                if probs[0][1]==1.0:
+                    nothing()
+                elif probs[0][0]==1.0:
+                    apple() 
+                elif probs[0][2]==1.0:
+                    coke()
+                else:
+                    nothing()
+    except KeyboardInterrupt:
+        print("Exiting...")

@@ -126,12 +126,10 @@ void receiveData() {
         //Serial.println("Test");
         moveLeft(speed, speed);
         dAngle = Wire.read();
-        dAngle *= 5;
         break;
       case 69: // character "D"
         moveRight(speed, speed);
         dAngle = Wire.read();
-        dAngle *= 5;
         break;
       case 70: // character "F"
         speed = Wire.read();

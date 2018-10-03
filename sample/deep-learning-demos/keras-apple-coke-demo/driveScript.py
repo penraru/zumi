@@ -36,7 +36,7 @@ def apple():
     # play a sound, get a mp3 file
 
 def nothing():
-    print("Background")
+    print("\n\n\tNo object detected!\n\n")
 
 functionsKey = {
         "1": nothing,
@@ -45,25 +45,30 @@ functionsKey = {
         }
 
 print("Loading model...")
-model = load_model('second_try.h5')
+#model = load_model('second_try.h5')
+model = load_model('third_try.h5')
+
 with picamera.PiCamera() as camera:
     try:
         while 1:
             with picamera.array.PiRGBArray(camera) as output:
-                input("Type something to start: ")
+                input("\n\nPress enter to start: ")
                 camera.capture(output, 'rgb')
                 x= Image.fromarray(output.array).resize((150,150))
                 x = np.expand_dims(x, axis=0)
-                #pred = model.predict_classes(x)
-                #functionsKey[(str(int(pred)))]()
-                probs=model.predict_proba(x)
-                if probs[0][1]==1.0:
-                    nothing()
-                elif probs[0][0]==1.0:
-                    apple() 
-                elif probs[0][2]==1.0:
-                    coke()
-                else:
-                    nothing()
+                pred = model.predict_classes(x)
+                functionsKey[(str(int(pred)))]()
+                
+                #probs=model.predict_proba(x)
+                #if probs[0][1]==1.0:
+                #    nothing()
+                #elif probs[0][0]==1.0:
+                #    apple() 
+                #elif probs[0][2]==1.0:
+                #    coke()
+                #else:
+                #    nothing()
+   
+
     except KeyboardInterrupt:
-        print("Exiting...")
+        print("\n\nExiting...\n\n")

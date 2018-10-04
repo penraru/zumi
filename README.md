@@ -12,7 +12,7 @@ The first thing you need to do is connect her to your WiFi network.
 2. Configure IPv4 should be set to Manually.<BR>
 
 3. Set IP Address and Router to 192.168.7.1 + Subnet mask to 255.255.255.0. Press Apply.<BR>
-![alt text](https://learn.adafruit.com/assets/29325)
+![alt text](https://cdn-learn.adafruit.com/assets/assets/000/029/325/original/raspberry_pi_networkconfig.png?1451151023)
   
 4. Open Terminal and "ssh pi@192.168.7.2"
 ![alt text](https://cdn-learn.adafruit.com/assets/assets/000/029/329/medium640/raspberry_pi_ssh.png?1451151032)

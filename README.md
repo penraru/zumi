@@ -7,17 +7,18 @@ The first thing you need to do is connect her to your WiFi network.
 
 #### For Mac Users:
 1. Goto System Preferences → Network → RNDIS/Gadget (should be in yellow light).<BR>
-[TODO] needs photo
+![alt text](https://cdn-learn.adafruit.com/assets/assets/000/029/328/original/raspberry_pi_selfassigned.png?1451151031]
 
 2. Configure IPv4 should be set to Manually.<BR>
-[TODO] needs photo
 
 3. Set IP Address and Router to 192.168.7.1 + Subnet mask to 255.255.255.0. Press Apply.<BR>
-[TODO] needs photo
-
+![alt text](https://learn.adafruit.com/assets/29325)
+  
 4. Open Terminal and "ssh pi@192.168.7.2"
+![alt text](https://cdn-learn.adafruit.com/assets/assets/000/029/329/medium640/raspberry_pi_ssh.png?1451151032)
 
 5. "sudo raspi-config" --> "Network Options"
+
 
 #### For Windows Users:
 1. Open up Network and Sharing Center and click on Change Adapter Settings

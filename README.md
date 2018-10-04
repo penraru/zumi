@@ -7,7 +7,7 @@ The first thing you need to do is connect her to your WiFi network.
 
 #### For Mac Users:
 1. Goto System Preferences → Network → RNDIS/Gadget (should be in yellow light).<BR>
-![alt text](https://learn.adafruit.com/assets/29328]
+![alt text](https://cdn-learn.adafruit.com/assets/assets/000/029/328/original/raspberry_pi_selfassigned.png?1451151031]
 
 2. Configure IPv4 should be set to Manually.<BR>
 

@@ -63,6 +63,6 @@
 ![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/10.2.jpg "Logo Title Text 1")
 ![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/10.3.jpg "Logo Title Text 1")
 ![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/10.4.jpg "Logo Title Text 1")
-Connect the battery at last.
-If you want to remove it, remove battery at first.
-Remove battery when you don't use the Zumi.
+######Connect the battery at last.
+######If you want to remove it, remove battery at first.
+######Remove battery when you don't use the Zumi.

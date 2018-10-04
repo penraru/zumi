@@ -109,5 +109,8 @@ def requestBottomSensorData():
 def lineTracer():
     ser.write(b'K\n')
     
-def soundPlayer():
+def beepSad():
+    ser.write(b'o\n')
+    
+def beepHappy():
     ser.write(b'p\n')

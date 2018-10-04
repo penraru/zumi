@@ -6,7 +6,7 @@ import picamera.array
 import sys
 sys.path.insert(0, '/home/pi/zumi/lib')
 print("Importing Engine...")
-#import Engine as engine
+import Engine as engine
 
 print("Importing numpy...")
 import numpy as np
@@ -34,7 +34,8 @@ def apple():
     #time.sleep(3)
     #engine.stop()
     # play a sound, get a mp3 file
-
+    engine.sound_play()
+    
 def nothing():
     print("\n\n\tNo object detected!\n\n")
 

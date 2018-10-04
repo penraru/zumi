@@ -52,3 +52,6 @@ def set_speed(s):
 
 def start_line_follower():
     ropi.lineTracer()
+
+def sound_play():
+    ropi.soundPlayer()

@@ -108,3 +108,6 @@ def requestBottomSensorData():
 
 def lineTracer():
     ser.write(b'K\n')
+    
+def soundPlayer():
+    ser.write(b'p\n')

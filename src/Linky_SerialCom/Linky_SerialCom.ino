@@ -13,6 +13,11 @@
 #include "ex_Unplugged.h"
 #include "RokitFirmata.h"
 
+int melodySad[] = {NOTE_D3, NOTE_B3, 233};
+int tempoSad[] = {8, 8, 8};
+int melodyHappy[] = {466, NOTE_E5, NOTE_C5};
+int tempoHappy[] = {8, 4, 4};
+
 int mode = 0;
 int speed = 20;
 int speedStepSize = 10;
@@ -223,10 +228,15 @@ void loop()
           Serial.println("0");
           //Serial.println(" ");
           break;
+              
+        //========================================================
+        case 111: //character "o"
+          SoundProcess(melodySad, tempoSad, 3);
+          break;
     
         //========================================================
         case 112: //character "p"
-          Sound_Coin();
+          SoundProcess(melodyHappy, tempoHappy, 3);
           break;
   
         //========================================================

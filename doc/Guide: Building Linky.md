@@ -11,11 +11,13 @@
 
 [6: Adding the Camera Mount](#step-6-adding-the-camera-mount)
 
-[7: Adding the Battery](#step-7-adding-the-battery)
+[7: Adding the Battery for Printed Circuit Board](#step-7-adding-the-battery-for-printed-circuit-board)
 
 [8: Setting up the Raspberry Pi and the Camera](#step-8-setting-up-the-rasberry-pi-and-the-camera)
 
-[9: Attaching the Raspberry Pi and connecting with Circuit Board](#step-9-attaching-the-raspberry-pi-and-connecting-with-circuit-board)
+[9: Attaching the Raspberry Pi and connecting with Printed Circuit Board](#step-9-attaching-the-raspberry-pi-and-connecting-with-printed-circuit-board)
+
+[10: Connecting the boost convertor for Raspberry Pi](#step-connecting-the-boost-convertor-for-raspberry-pi)
 
 ## Step 1: Setting Up the Base
 ![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/1.1.jpg "Logo Title Text 1")
@@ -44,7 +46,7 @@
 ![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/6.2.jpg "Logo Title Text 1")
 ![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/6.3.jpg "Logo Title Text 1")
 ![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/6.4.jpg "Logo Title Text 1")
-## Step 7: Adding the Battery
+## Step 7: Adding the Battery for Printed Circuit Board
 ![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/7.1.jpg "Logo Title Text 1")
 ![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/7.2.jpg "Logo Title Text 1")
 ![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/7.3.jpg "Logo Title Text 1")
@@ -53,6 +55,14 @@
 ![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/8.2.jpg "Logo Title Text 1")
 ![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/8.3.jpg "Logo Title Text 1")
 ![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/8.4.jpg "Logo Title Text 1")
-## Step 9: Attaching the Raspberry Pi and connecting with Circuit Board
+## Step 9: Attaching the Raspberry Pi and connecting with Printed Circuit Board
 ![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/9.1.jpg "Logo Title Text 1")
 ![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/9.2.jpg "Logo Title Text 1")
+## Step 10: Connecting the Boost Convertor for Raspberry Pi
+![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/10.1.jpg "Logo Title Text 1")
+![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/10.2.jpg "Logo Title Text 1")
+![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/10.3.jpg "Logo Title Text 1")
+![alt text](https://github.com/RobolinkInc/Linky/blob/master/doc/Build%20Images/10.4.jpg "Logo Title Text 1")
+Connect the battery at last.
+If you want to remove it, remove battery at first.
+Remove battery when you don't use the Zumi.

@@ -1,5 +1,4 @@
 #Import this file to use all of Zumi's sound functions
-import time
 import sys
 sys.path.insert(0,'/home/pi/zumi/src')
 import Linky_SerialCom as zumi

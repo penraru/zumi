@@ -8,6 +8,9 @@ sys.path.insert(0, '/home/pi/zumi/lib')
 print("Importing Engine...")
 import Engine as engine
 
+print("Importing Speaker...")
+import Speaker as speaker
+
 print("Importing numpy...")
 import numpy as np
 
@@ -19,22 +22,20 @@ from keras.models import load_model
 from keras.preprocessing.image import img_to_array
 
 import time
-#sys.path.insert(0, '/home/pi/Desktop/zumi/lib')
-
 
 def coke():
     print("\n\n🍹 🍹 🍹 🍹 🍹 Coke! 🍹 🍹 🍹 🍹 🍹\n\n")
-    #engine.go_backward()
-    #time.sleep(2)
-    #engine.stop()
+    engine.go_backward()
+    time.sleep(2)
+    engine.stop()
+    speaker.play_sad_sound()
 
 def apple():
     print("\n\n🍏 🍏 🍏 🍏 🍏 Apple! 🍏 🍏 🍏 🍏 🍏\n\n")
-    #engine.turn_right()
-    #time.sleep(3)
-    #engine.stop()
-    # play a sound, get a mp3 file
-    engine.sound_play()
+    engine.turn_right()
+    time.sleep(3)
+    engine.stop()
+    speaker.play_happy_sound()
     
 def nothing():
     print("\n\n\tNo object detected!\n\n")

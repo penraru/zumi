@@ -6,8 +6,6 @@ import Linky_SerialCom as ropi
 
 #[TODO: add parameters in each method to specify how long]
 
-time.sleep(2)
-
 def go_forward():
     ropi.forward()
     print("forward")

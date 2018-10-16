@@ -17,6 +17,12 @@ int speedStepSize = 10;
 int doOnce = 0;
 int speed = 30;
 
+int melody, melodyOld = 0;
+int melodyIter;
+int melodySad[] = {146, 0, 246, 0, 233, 0};
+int melodyHappy[] = {466, 0, 659, 0, 0, 0, 523, 0, 0};
+int melodyHorn[] = {180, 0, 0, -1, 0, 0, 180, 0, 0, 0, 0};
+
 float dAngle = 0.0;
 float angle, initAngle;
 
@@ -70,6 +76,15 @@ void moveBackward(int speedA, int speedB) {
   digitalWrite(BIN2, HIGH);
 }
 
+void playMelody(int arr[], int len) {
+  if (arr[melodyIter] > 0) tone(4, arr[melodyIter]);
+  else if (arr[melodyIter] == -1) noTone(4);
+  if (melodyIter > len - 2) {
+    noTone(4);
+    melody = 0;
+  }
+}
+
 void setup() {
   // put your setup code here, to run once:
   Wire.begin(SLAVE_ADDRESS);
@@ -86,24 +101,50 @@ void setup() {
   pinMode(AIN1, OUTPUT);
   pinMode(BIN2, OUTPUT);
   pinMode(BIN1, OUTPUT);
+  pinMode(4, OUTPUT);
   digitalWrite(STBY, HIGH);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  if(dAngle > 0.0){
+  // code for handling turns made using the gyroscope
+  if (dAngle > 0.0) {
     mpu6050.update();
     angle = mpu6050.getAngleZ();
-    if(doOnce == 0){
+    if (doOnce == 0) {
       initAngle = angle;
       doOnce = 1;
     }
-    if(abs(angle - initAngle) > dAngle){
+    if (abs(angle - initAngle) > dAngle) {
       moveStop();
       dAngle = 0.0;
       doOnce = 0;
     }
   }
+
+  // code for handling melodies
+  if (melody != melodyOld) {
+    noTone(4);
+    melodyIter = 0;
+    melodyOld = melody;
+  }
+  if (melody > 0) {
+    switch (melody)
+    {
+      case 1:
+        playMelody(melodySad, 6);
+        break;
+      case 2:
+        playMelody(melodyHappy, 9);
+        break;
+      case 3:
+        playMelody(melodyHorn, 11);
+        break;
+      default:
+        break;
+    }
+    melodyIter++;
+  }
+
   delay(100);
 }
 
@@ -149,14 +190,22 @@ void receiveData() {
       case 81: //character "Q"
         moveStop();
         break;
+      case 111: //character "o"
+        melody = 1;
+        break;
+      case 112:
+        melody = 2;
+        break;
+      case 113:
+        melody = 3;
+        break;
       default:
         break;
     }
   }
 }
 
-void sendData(){
-  if(dAngle > 0.0) Wire.write(1);
+void sendData() {
+  if (dAngle > 0.0) Wire.write(1);
   else Wire.write(0);
 }
-
